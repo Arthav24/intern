@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <wiringPi.h>
 
-int flag=0,ret1,ret2;
+volatile int flag=0;int ret1,ret2;
 void *thread_1( void *ptr );
 void *thread_2( void *ptr );
 void myInterrupt(void);
@@ -35,8 +35,7 @@ int main()
     if(iret2<0){ 
      printf("error starting thread 2");}
      
-     
-		pthread_join( t1, (void **)&(ptr[0]));
+     pthread_join( t1, (void **)&(ptr[0]));
 		 printf("Thread1 stoped\n");
 		pthread_join( t2, (void **)&(ptr[1]));
 		 printf("Thread2 stoped");
