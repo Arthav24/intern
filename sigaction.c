@@ -13,7 +13,7 @@
 
 volatile int flag=0;
 char cstr[100];
-int iret,ret,p[2],f1;
+int iret,ret,p[2],f1,e;
 void *thread_1(void *ptr);
 char str[] = "start";
 char str1[] = "end";
@@ -91,8 +91,8 @@ void *thread_1( void *ptr)
 	
 	
 	while(1){
-	
-
+scanf("%d",&e);
+printf("%d",e);
 	if(strncmp(cstr,str,6)==0){flag=1;}
 	else if (strncmp(cstr,str1,3)==0){pthread_exit(NULL);}
 	

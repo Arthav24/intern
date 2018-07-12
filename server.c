@@ -8,20 +8,6 @@
 #include <sys/types.h>
 
 
-char *strrev(char *str)
-{
-      char *p1, *p2;
-
-      if (! str || ! *str)
-            return str;
-      for (p1 = str, p2 = str + strlen(str) - 1; p2 > p1; ++p1, --p2)
-      {
-            *p1 ^= *p2;
-            *p2 ^= *p1;
-            *p1 ^= *p2;
-      }
-      return str;
-}
 int main()
 {
 	int fd = 0;
@@ -66,13 +52,9 @@ int main()
 							
 			while ( (n = recv(in, buff, 256,0)) > 0)  
 			{
-			
-				printf("Received: %s",buff);
-				
-				
+			    printf("Received: %s",buff);
 				fgets(nbuff,255,stdin);
 				send(in, nbuff, strlen(nbuff), 0);
-		
 				bzero(buff,256);
 										
 			}
