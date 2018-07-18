@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 int chan=0,t;
-int i = 0;
 int speed=10000000; 
 unsigned char buf[3];
 int main(){
